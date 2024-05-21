@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Bookmarker</title>
+    <link rel="icon" href="bookmark.png">
+</head>
+<body>
+    <main class="interface py-5 position-relative">
+      <div class="container d-flex flex-column justify-content-center align-items-center">
+        <h1 class="py-2 position-relative">Bookmarker</h1>
+        <div class="bookmark-body w-100 p-3 py-4 mt-5 d-flex flex-column justify-content-center align-items-center gap-4">
+          <h2>
+            <i class="fa-solid fa-bookmark"></i>
+            Bookmark your favorite sites
+            <i class="fa-solid fa-bookmark"></i>
+          </h2>
+          <div class="site-name w-100 d-flex flex-column justify-content-center">
+            <label for="bookmarkName" class="pb-2 fw-semibold">
+              <i class="fa-solid fa-book-bookmark pe-2"></i>
+              Site Name</label>
+            <input type="text" placeholder="Bookmark Name" class="form-control" id="bookmarkName">
+          </div>
+          <div class="site-url w-100 d-flex flex-column justify-content-center">
+            <label for="bookmarkURL" class="pb-2 fw-semibold">
+              <i class="fa-solid fa-link pe-2"></i>Site URL</label>
+            <input type="url" placeholder="Website URL" class="form-control" id="bookmarkURL">
+          </div>
+          <button class="btn btn-outline-danger px-5 d-block " id="submitBtn">Submit</button>
+          <button onclick="updateData()" class="btn btn-success px-5 d-none" id="updateBtn">Update</button>
+        </div>
+        <input oninput="searchData(this.value)" type="url" placeholder="Search" class="form-control mt-3" id="search">
+        <button onclick="deleteAllData()" class="btn btn-danger px-5 mt-3 d-block " id="DeleteAll">DeleteAll<span id="deleteIndex"></span></button>
+        <table class="table mt-4 text-center bg-light">
+          <thead>
+            <tr><th class="text-capitalize">index</th>
+            <th class="text-capitalize">Website Name</th>
+            <th class="text-capitalize">Visit</th>
+            <th class="text-capitalize">Update</th>
+            <th class="text-capitalize">Delete</th>
+          </tr></thead>
+          <tbody id="tableContent">
+              
+            </tbody>
+        </table>
+      </div>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="index.js"></script>
+</body>
+</html>
